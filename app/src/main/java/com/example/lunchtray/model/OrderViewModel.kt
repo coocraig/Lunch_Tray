@@ -83,7 +83,7 @@ class OrderViewModel : ViewModel() {
         // TODO: set the current entree value to the menu item corresponding to the passed in string
         _entree.value = menuItems.get(entree)
         // TODO: update the subtotal to reflect the price of the selected entree.
-        _subtotal.value =+ _entree.value!!.price
+        updateSubtotal(_entree.value!!.price)
     }
 
     /**
@@ -103,7 +103,7 @@ class OrderViewModel : ViewModel() {
         _side.value = menuItems.get(side)
 
         // TODO: update the subtotal to reflect the price of the selected side.
-        _subtotal.value =+ _side.value!!.price
+        updateSubtotal(_side.value!!.price)
     }
 
     /**
@@ -130,7 +130,7 @@ class OrderViewModel : ViewModel() {
         _accompaniment.value = menuItems.get(accompaniment)
 
         // TODO: update the subtotal to reflect the price of the selected accompaniment.
-        _subtotal.value =+ _accompaniment.value!!.price
+        updateSubtotal(_accompaniment.value!!.price)
     }
 
     /**
@@ -170,5 +170,8 @@ class OrderViewModel : ViewModel() {
         previousEntreePrice = 0.0
         previousSidePrice = 0.0
         previousAccompanimentPrice = 0.0
+        _subtotal.value = 0.0
+        _total.value = 0.0
+
     }
 }
