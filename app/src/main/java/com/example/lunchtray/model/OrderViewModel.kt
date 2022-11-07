@@ -75,17 +75,13 @@ class OrderViewModel : ViewModel() {
         if(_entree.value!=null){
             previousEntreePrice = _entree.value!!.price
         }
-
         // TODO: if _subtotal.value is not null subtract the previous entree price from the current
         //  subtotal value. This ensures that we only charge for the currently selected entree.
         if(_subtotal.value != null){
             _subtotal.value =- previousEntreePrice
         }
-
-
         // TODO: set the current entree value to the menu item corresponding to the passed in string
         _entree.value = menuItems.get(entree)
-
         // TODO: update the subtotal to reflect the price of the selected entree.
         _subtotal.value =+ _entree.value!!.price
     }
@@ -98,16 +94,11 @@ class OrderViewModel : ViewModel() {
         if(_side.value != null){
             previousSidePrice = _side.value!!.price
         }
-
         // TODO: if _subtotal.value is not null subtract the previous side price from the current
         //  subtotal value. This ensures that we only charge for the currently selected side.
         if(_subtotal.value != null){
             _subtotal.value =- previousSidePrice
         }
-
-
-
-
         // TODO: set the current side value to the menu item corresponding to the passed in string
         _side.value = menuItems.get(side)
 
